@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+var current = 0;
+var imagenes = new Array();
+
+$(document).ready(function() {
+    var numImages = 6;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+
+        return false;
+    });
+
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+
+        return false;
+    });
+ });
+</script>
+  <meta charset="utf-8">
+  <title>API2</title>
+  </head><body><div id="fb-root"></div>
+  <script async="" defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v10.0" nonce="NvEL8koy"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>body{background-color:#000;}</style><link rel="stylesheet" href="styles.c4cc63a628b08afad314.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.c4cc63a628b08afad314.css"></noscript>
+
+<app-root></app-root>
+<script src="runtime.16392c54edc3dc79ace3.js" defer></script><script src="polyfills.123c72714c70956c4d7f.js" defer></script><script src="main.417f16a11f1131aacbdc.js" defer></script>
+
+</body></html>
